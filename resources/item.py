@@ -67,7 +67,4 @@ class ItemUpdateStatus(Resource):
 
         item.save_to_db()
 
-        return {
-                   "message": "Updated successful",
-                   "data": item.json()
-               }, 200
+        return generate_response(None, 0, item.json(), 200)
